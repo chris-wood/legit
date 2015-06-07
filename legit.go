@@ -10,11 +10,11 @@ import (
 )
 
 type GitCommit struct { 
-	id string `json:"id"`
-	merge string `json:"merge"`
-	author string `json:"author"`
-	date string `json:"date"`
-	comment string `json:"comment"`
+	Id string `json:"id"`
+	Merge string `json:"merge"`
+	Author string `json:"author"`
+	Date string `json:"date"`
+	Comment string `json:"comment"`
 }
 
 // func (commit GitCommit) ToString() string {
@@ -57,7 +57,7 @@ func linearizeLog(login []byte) {
 		}
 
 		if parsedComment == true {
-			newCommit := GitCommit{id: commit, merge: merge, author: author, date: date, comment: comment}
+			newCommit := GitCommit{Id: commit, Merge: merge, Author: author, Date: date, Comment: comment}
 			commits.PushFront(newCommit)
 
 			jsonRep, _ := json.Marshal(newCommit)
